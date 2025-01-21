@@ -1,4 +1,4 @@
-﻿# {{repo_name}}
+﻿# SonarTest
 
 1 Modify below settings to run the workflow successfully after clone.🛠️
 
