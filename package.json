@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint . -c .js,.jsx,.ts,.tsx",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
     "ts-check": "tsc --noEmit p tsconfig.json",
