@@ -17,3 +17,5 @@
 4 run npm start to spin up the development server. 🚀
 
 5 SONAR_TOKEN need to be setup
+
+6 SONAR SCAN Quality Checks results => https://sonarcloud.io/images/project_badges/sonarcloud-highlight.svg 📃
