@@ -1,41 +1,37 @@
-module.exports = {
-  root: true,
-  env: {
-    browser: true,
-    node: true,
-    es2021: true,
-  },
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
-  ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
+const tsParser = require('@typescript-eslint/parser');
+
+module.exports = [
+  {
+    files: ['*.js', '*.jsx'],
+    languageOptions: {
+      parser: require('espree'),
+      ecmaVersion: 12,
+      sourceType: 'module',
     },
-    ecmaVersion: 12,
-    sourceType: 'module',
-  },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-  ],
-  settings: {
-    react: {
-      version: 'detect',
+    plugins: {
+      react: require('eslint-plugin-react'),
     },
-  },
-  rules: {
-    // Define your rules here
-  },
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'],
-      rules: {
-        // TypeScript specific rules
+    rules: {
+      // JavaScript-specific rules
+    },
+    settings: {
+      react: {
+        version: 'detect',
       },
     },
-  ],
-};
+  },
+  {
+    files: ['*.ts', '*.tsx'],
+    languageOptions: {
+      parser: tsParser,
+      ecmaVersion: 12,
+      sourceType: 'module',
+    },
+    plugins: {
+      '@typescript-eslint': require('@typescript-eslint/eslint-plugin'),
+    },
+    rules: {
+      // TypeScript-specific rules
+    },
+  },
+];
