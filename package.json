@@ -7,7 +7,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
-    "ts-check": "tsc --noEmit p tsconfig.json",
+    "ts-check": "tsc --noEmit -p tsconfig.json",
     "prepare": "husky install",
     "prestart": "jest",
     "start": "webpack serve --config webpack/webpack.config.js --env env=dev --env repo_name=SonarTest  --open --hot",
